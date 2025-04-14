@@ -1,95 +1,53 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Styles from "./page.module.css";
+import Navigation from "./Components/Navigation/Navigation";
+import Section from "./Components/Section/Section";
+import Footer from "./Components/Footer/Footer";
+import ProgressBar from "./Components/ProgressBar/ProgressBar";
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    return (
+        <div>
+            <ProgressBar/>
+            <main className={Styles.main}>
+                <Navigation />
+            </main>
+            <section className={Styles.section}>
+                <h1 className={Styles.h1}>featured collections</h1>
+                <Section
+                    title="Urban Landscapes"
+                    tagTitle="Architecture"
+                    tagTitleTwo="City"
+                    cta="View Gallery"
+                    icon={true}
+                />
+                <Section
+                    title="Oceanic Horizons"
+                    tagTitle="Nature"
+                    tagTitleTwo="Seascapes"
+                    cta="View Gallery"
+                    icon={true}
+                />
+            </section>
+            <section className={Styles.section}>
+                <h1 className={Styles.h1}>upcoming exhibitions</h1>
+                <Section
+                    title="Moments in Motion"
+                    tagTitle="Street"
+                    tagTitleTwo="Documentary"
+                    cta="Opening in June"
+                    icon={false}
+                />
+                <Section
+                    title="Ethereal Light Studies"
+                    tagTitle="Abstract"
+                    tagTitleTwo="Minimalist"
+                    cta="Opening in August"
+                    icon={false}
+                />
+            </section>
+            <footer>
+                <Footer />
+            </footer>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+    );
 }

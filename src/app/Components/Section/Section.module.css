@@ -1,0 +1,144 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    background-color: rgba(26, 43, 60, 0.4);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    border-left: 3px solid #50b5ff;
+    transition: all 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    background-color: rgba(26, 43, 60, 0.5);
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.h2 {
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.h2::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #50b5ff;
+    border-radius: 2px;
+}
+
+.p {
+    color: #e0e0e0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.cta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(94, 231, 223, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background-color: #50b5ff;
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(94, 231, 223, 0.3);
+}
+
+.cta:hover .h2Action {
+    color: #1a2b3c;
+}
+
+.ctaDisabled {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.h2Action {
+    color: #50b5ff;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.ctaDisabled .h2Action {
+    color: #888888;
+}
+
+.img {
+    transition: transform 0.3s ease;
+    filter: brightness(0) saturate(100%) invert(56%) sepia(83%) saturate(1966%) hue-rotate(190deg) brightness(101%) contrast(101%);
+}
+
+.cta:hover .img {
+    transform: translateX(5px);
+    filter: brightness(0) saturate(100%) invert(13%) sepia(22%) saturate(1500%) hue-rotate(173deg) brightness(96%) contrast(95%);
+}
+
+.imgDisabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+@media screen and (max-width: 767px) {
+    .section {
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+    
+    .action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+    
+    .p {
+        font-size: 1rem;
+    }
+    
+    .h2 {
+        font-size: 1.8rem;
+    }
+    
+    .h2Action {
+        font-size: 1rem;
+    }
+}

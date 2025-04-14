@@ -1,27 +1,43 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --max-width: 1100px;
+  --border-radius: 12px;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+      "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+      "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 15, 32, 46;
+  --background-end-rgb: 30, 45, 60;
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+  --primary-glow: conic-gradient(
+      from 180deg at 50% 50%,
+      #5ee7df33 0deg,
+      #50b5ff33 55deg,
+      #5ee7df33 120deg,
+      #50b5ff33 160deg,
+      transparent 360deg
+  );
+  --secondary-glow: radial-gradient(
+      rgba(94, 231, 223, 0.5),
+      rgba(94, 231, 223, 0)
+  );
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --tile-start-rgb: 26, 43, 60;
+  --tile-end-rgb: 15, 32, 46;
+  --tile-border: conic-gradient(
+      #5ee7df80,
+      #5ee7df40,
+      #5ee7df30,
+      #5ee7df20,
+      #5ee7df10,
+      #5ee7df10,
+      #5ee7df80
+  );
+
+  --callout-rgb: 26, 43, 60;
+  --callout-border-rgb: 94, 231, 223;
+  --card-rgb: 40, 60, 80;
+  --card-border-rgb: 94, 231, 223;
 }
 
 * {
@@ -30,13 +46,84 @@ body {
   margin: 0;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: 'Poppins', 'Arial', sans-serif;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, #1a2b3c, #0f202e);
+  padding: 0 8vw;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+a:hover {
+  color: #50b5ff;
+}
+
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+p {
+  color: #e0e0e0;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.3px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  h1 {
+      font-size: calc(6rem * 0.7);
+  }
+
+  h2 {
+      font-size: calc(2.2rem * 0.8);
+  }
+
+  h3 {
+      font-size: calc(1.5rem * 0.8);
+  }
+  
+  body {
+      padding: 0 5vw;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  h1 {
+      font-size: calc(6rem * 0.4);
+  }
+  
+  h2 {
+      font-size: calc(2.2rem * 0.7);
+  }
+
+  h3 {
+      font-size: calc(1.5rem * 0.75);
+  }
+  
+  body {
+      padding: 0 4vw;
   }
 }
